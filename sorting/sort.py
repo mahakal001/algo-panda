@@ -1,9 +1,11 @@
 from sorting_helpers import merge_procedure
-
 from sorting_helpers import partition_procedure
 
-
 def selectionSort(arr):
+
+    if len(arr) < 2:
+        return arr
+
     arrSize = len(arr)
     for i in range(0, arrSize):
         minIndex = i
@@ -27,6 +29,9 @@ def bubbleSort(arr, n):
     :return:
     '''
 
+    if n < 2:
+        return arr
+
     for i in range(0, n):
         for j in range(0, n - i - 1):
             if arr[j] > arr[j + 1]:
@@ -43,6 +48,10 @@ def insertionSort(arr, n):
     :param n:
     :return:
     '''
+
+    if n < 2:
+        return arr
+
     for i in range(1, n):
         j = i - 1
         tmp = arr[i]
@@ -55,12 +64,15 @@ def insertionSort(arr, n):
 
 def countingSort(arr, n, k):
     """
-
     :param arr: input array
     :param n: Lenght of the array
     :param k: The value of maximum element that can be present in the array
     :return: sorted version of input arr
     """
+
+    if n < 2:
+        return arr
+
     # declare a list of size k
     occurenceRecord = [0] * (k + 1)
 
@@ -79,7 +91,6 @@ def countingSort(arr, n, k):
 
 def merge_sort_recursive(arr, p, q):
     """
-
     :param arr: Array to be sorted
     :param p: Starting index of the sbuarray to be sorted
     :param q:  Last index of the subarray to be sorted
