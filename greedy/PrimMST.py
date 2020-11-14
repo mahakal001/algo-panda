@@ -34,11 +34,21 @@ def prim_mst_naive(weighted_edges, n):
     return solution
 
 
+def prim_mst_mheap(weighted_edges, n):
+    """
+
+    :param weighted_edges:
+    :param n:
+    :return:
+    """
+    pass
+
+
 weighted_edges = [[1, 2, 4], [1, 3, 8], [2, 3, 9], [2, 4, 8], [3, 4, 2], [2, 5, 10], [3, 6, 1], [4, 5, 7], [4, 6, 9],
                   [5, 6, 5], [5, 7, 6], [6, 7, 2]]
 total_nodes = 7
 mst = prim_mst_naive(weighted_edges, total_nodes)
 
 print("MST :", mst)
-mst_w = [e[2] for e in  mst]
+mst_w = [e[2] for e in mst]
 print("MST weight is ", sum(mst_w))
