@@ -21,15 +21,15 @@ def bellman_ford(weighted_edges, start_node, n):
 
     for u,v,w in weighted_edges:
         if d_arr[v] > d_arr[u] + w:
-            return False, None
+            return True, None
 
-    return True, d_arr
+    return False, d_arr
 
 weighted_edges = [[1,2,10], [1,5,5], [2,3,1], [2,5,2], [3,4,4], [4,3,6], [4,1,7], [5,4,2], [5,3,9], [5,1,3] ]
 total_nodes = 5
-path, distances = bellman_ford(weighted_edges, 1, total_nodes)
+has_negative_weight_cycle, distances = bellman_ford(weighted_edges, 1, total_nodes)
 
-print("path: ", path)
+print("has_negative_weight_cycle? : ", has_negative_weight_cycle)
 print("Distances: ", distances[1:])
 
 
